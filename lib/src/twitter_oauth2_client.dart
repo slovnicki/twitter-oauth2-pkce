@@ -87,7 +87,7 @@ class _TwitterOAuth2Client implements TwitterOAuth2Client {
     final String refreshToken,
   ) async {
     final response = await http.post(
-      Uri.https('api.twitter.com', '/2/oauth2/token'),
+      Uri.https('api.x.com', '/2/oauth2/token'),
       headers: _buildAuthorizationHeader(
         clientId: _clientId,
         clientSecret: _clientSecret,
@@ -109,7 +109,7 @@ class _TwitterOAuth2Client implements TwitterOAuth2Client {
 
     final redirectedUri = await _webAuthClient.authenticate(
       uri: Uri.https(
-        'twitter.com',
+        'x.com',
         '/i/oauth2/authorize',
         {
           'response_type': 'code',
@@ -147,7 +147,7 @@ class _TwitterOAuth2Client implements TwitterOAuth2Client {
     required String codeVerifier,
   }) async {
     final response = await http.post(
-      Uri.https('api.twitter.com', '/2/oauth2/token'),
+      Uri.https('api.x.com', '/2/oauth2/token'),
       headers: _buildAuthorizationHeader(
         clientId: _clientId,
         clientSecret: _clientSecret,
